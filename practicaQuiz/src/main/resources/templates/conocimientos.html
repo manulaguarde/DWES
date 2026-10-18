@@ -1,0 +1,22 @@
+<form th:action="@{/resumen}" th:object="${alumno}" method="post">
+	
+	<input type="hidden" th:field="*{nombre}">
+	<input type="hidden" th:field="*{curso}">
+	<input type="hidden" th:field="*{anio}">
+	<label for="conocimiento">Conocimientos:</label>
+	<input type="checkbox" th:field="*{conocimientos}" value="JavaScript">JavaScript
+	<input type="checkbox" th:field="*{conocimientos}" value="React">React
+	<input type="checkbox" th:field="*{conocimientos}" value="Angular">Angular<br>
+	<input type="checkbox" th:field="*{conocimientos}" value="Java">Java
+	<input type="checkbox" th:field="*{conocimientos}" value="Spring Boot">Sripng Boot
+	<input type="checkbox" th:field="*{conocimientos}" value="Python">Python<br>
+	<input type="checkbox" th:field="*{conocimientos}" value="Nodejs">Node.js
+	<input type="checkbox" th:field="*{conocimientos}" value="PHP">PHP
+	<input type="checkbox" th:field="*{conocimientos}" value="Laravel">Laravel<br>
+	<input type="checkbox" th:field="*{conocimientos}" value="HTML">HTML
+	<input type="checkbox" th:field="*{conocimientos}" value="CSS">CSS
+	<input type="checkbox" th:field="*{conocimientos}" value="C#">C#
+	
+	<button type="submit">Enviar todo</button>
+	
+</form>

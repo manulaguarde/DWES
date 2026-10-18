@@ -1,0 +1,12 @@
+<h1>Resumen de los datos</h1>
+
+<p>Nombre: <span th:text="${alumno.nombre}"></span></p>
+<p>Curso: <span th:text="${alumno.curso}"></span></p>
+<p>Año: <span th:text="${alumno.anio}"></span></p>
+
+<p>Conocimientos:</p>
+<ul>
+	<li th:each="conocimiento : ${alumno.conocimientos}" th:text="${conocimiento}"></li>
+</ul>
+
+<a href="/">LLenar otro formulario</a>

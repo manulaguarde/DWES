@@ -1,0 +1,13 @@
+<form th:action="@{/conocimientos}" th:object="${alumno}" method="post">
+	
+	<input type="hidden" th:field="*{nombre}">
+	<input type="hidden" th:field="*{curso}">
+	<label for="anio">Selecciona el año</label><br>
+	<input type="radio" th:field="*{anio}" value="1º">1º Año
+	<input type="radio" th:field="*{anio}" value="2º">2º Año<br>
+		<p style="color:red;" th:if="${#fields.hasErrors('anio')}" th:errors="*{anio}"></p>
+	
+	<button type="submit">Guardar</button>
+
+	
+</form>

@@ -1,0 +1,7 @@
+<form th:action="@{/curso}" method="post">
+	<label for="nombre">Nombre:</label><br>
+	<input type="text" th:field="${alumno.nombre}"><br>
+	<p style="color:red;" th:if="${#fields.hasErrors('${alumno.nombre}')}" th:errors="${alumno.nombre}"></p>
+	
+	<button type="submit">Guardar</button>
+</form>

@@ -1,0 +1,11 @@
+<form th:action="@{/anio}" th:object="${alumno}" method="post">
+	<input type="hidden" th:field="*{nombre}">
+	<label for="curso">Ingresa el curso al que perteneces</label><br>
+	<input type="radio" th:field="*{curso}" value="DAM" >DAM
+	<input type="radio" th:field="*{curso}" value="DAW" >DAW
+	<input type="radio" th:field="*{curso}" value="ASIR" >ASIR<br>
+	<p style="color:red;" th:if="${#fields.hasErrors('curso')}" th:errors="*{curso}"></p>
+	
+	<button type="submit">Guardar</button>
+	
+</form>
