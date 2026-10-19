@@ -48,5 +48,23 @@ public class ControladorWeb {
 		
 		return "resumen";
 	}
+	
+	@PostMapping("/atrasAFormularioUno")
+	public String volverAFormularioUno(@ModelAttribute("alumno") Alumno alumno) {
+		
+		return "formularioUno";
+	}
+	
+	@PostMapping("/atrasAFormularioDos")
+	public String volverAFormularioDos(@ModelAttribute("alumno") Alumno alumno) {
+		
+		return "formularioDos";
+	}
+	
+	@PostMapping("/atrasAFormularioTres")
+	public String volverAFormularioTres(@ModelAttribute("alumno") Alumno alumno) {
+		
+		return "formularioTres";
+	}
 
 }

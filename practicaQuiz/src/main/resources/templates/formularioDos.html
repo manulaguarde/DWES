@@ -9,3 +9,10 @@
 	<button type="submit">Guardar</button>
 	
 </form>
+
+<form th:action="@{/atrasAFormularioUno}" th:object="${alumno}" method="post"> 
+		<input type="hidden" th:field="*{nombre}">
+		
+		<button type="submit">Atrás</button>
+	
+</form>

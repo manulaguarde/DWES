@@ -11,3 +11,11 @@
 
 	
 </form>
+
+<form th:action="@{/atrasAFormularioDos}" th:object="${alumno}" method="post"> 
+		<input type="hidden" th:field="*{nombre}">
+		<input type="hidden" th:field="*{curso}">
+		
+		<button type="submit">Atrás</button>
+	
+</form>

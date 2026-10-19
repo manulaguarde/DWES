@@ -15,8 +15,16 @@
 	<input type="checkbox" th:field="*{conocimientos}" value="Laravel">Laravel<br>
 	<input type="checkbox" th:field="*{conocimientos}" value="HTML">HTML
 	<input type="checkbox" th:field="*{conocimientos}" value="CSS">CSS
-	<input type="checkbox" th:field="*{conocimientos}" value="C#">C#
+	<input type="checkbox" th:field="*{conocimientos}" value="C#">C#<br>
 	
 	<button type="submit">Enviar todo</button>
+	
+</form>
+
+<form th:action="@{/atrasAFormularioTres}" th:object="${alumno}" method="post"> 
+		<input type="hidden" th:field="*{nombre}">
+		<input type="hidden" th:field="*{curso}">
+		<input type="hidden" th:field="*{anio}">
+		<button type="submit">Atrás</button>
 	
 </form>
