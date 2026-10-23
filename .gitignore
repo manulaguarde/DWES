@@ -1,0 +1,42 @@
+# Ignorar carpetas de compilación y binarios en cualquier subproyecto
+# Metadata del espacio de trabajo
+.metadata/
+
+# Ignorar carpetas de compilación, ejecución y cachés en cualquier subproyecto
+**/build/
+**/bin/
+**/out/
+**/.gradle/
+**/.target/
+
+# Archivos de configuración de IDEs (STS / Eclipse / VS Code / IntelliJ)
+**/.settings/
+**/.project
+**/.classpath
+**/.vscode/
+**/.idea/
+**/*.iml
+**/*.ipr
+**/*.iws
+**/*.factorypath
+
+# Logs, temporales y del sistema operativo
+*.log
+*.tmp
+.DS_Store
+Thumbs.db**/build/
+**/bin/
+**/out/
+**/.gradle/
+
+# Archivos de configuración de IDEs (STS / Eclipse / VS Code / IntelliJ)
+**/.settings/
+**/.project
+**/.classpath
+**/.vscode/
+**/.idea/
+**/*.iml
+
+# Archivos temporales y de sistema
+*.log
+.DS_Store

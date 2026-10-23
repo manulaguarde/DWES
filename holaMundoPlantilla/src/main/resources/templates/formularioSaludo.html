@@ -1,0 +1,6 @@
+<h1>Formulario Saludo</h1>
+<form action="#" th:action="@{/mostrarResultados}" th:object="${saludo}" method="post">
+	<p>Id: <input type="text" th:field="*{id}" /></p>
+    <p>Message: <input type="text" th:field="*{contenido}" /></p>
+    <p><input type="submit" value="Enviar" /> <input type="reset" value="Resetear" /></p>
+</form>

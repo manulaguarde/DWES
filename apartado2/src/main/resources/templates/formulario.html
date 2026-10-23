@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario Sencillo</title>
+    <!-- CSS en la carpeta static -->
+    <link rel="stylesheet" th:href="@{/styles.css}">
+</head>
+<body>
+    <div class="contenedor">
+        <h2>Registro de Alumno</h2>
+
+        <form th:action="@{/guardar}" th:object="${alumnoForm}" method="post">
+            
+            <!-- Campo Texto: Nombre -->
+            <div>
+                <label>Nombre:*</label><br>
+                <input type="text" th:field="*{nombre}">
+                <p class="error" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></p>
+            </div><br>
+
+            <!-- Campo Radio: Curso -->
+            <div>
+                <label>Curso:*</label><br>
+                <input type="radio" th:field="*{curso}" value="1º DAW"> 1º DAW
+                <input type="radio" th:field="*{curso}" value="2º DAW"> 2º DAW
+                <p class="error" th:if="${#fields.hasErrors('curso')}" th:errors="*{curso}"></p>
+            </div><br>
+
+            <!-- Checkbox Múltiple: Hobbies -->
+            <div>
+                <label>Hobbies:</label><br>
+                <input type="checkbox" th:field="*{hobbies}" value="Programación"> Programación
+                <input type="checkbox" th:field="*{hobbies}" value="Deporte"> Deporte
+                <input type="checkbox" th:field="*{hobbies}" value="Música"> Música
+            </div><br>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</body>
+</html>
