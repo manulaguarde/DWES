@@ -1,0 +1,28 @@
+<h2>Listado de Personas Registradas</h2>
+
+<!-- Opción 1: Recorrer lista mediante elementos <li> -->
+<ul>
+    <!-- th:each="variableIndividual : ${listaDelModelo}" -->
+    <li th:each="p : ${personas}">
+        <span th:text="${p.nombre}">Nombre</span> - <span th:text="${p.edad}">0</span> años
+    </li>
+</ul>
+
+<hr/>
+
+<!-- Opción 2: Mostrarlo en una Tabla HTML -->
+<table border="1">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Edad</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Repite la fila <tr> por cada elemento de la lista 'personas' -->
+        <tr th:each="p : ${personas}">
+            <td th:text="${p.nombre}">Nombre</td>
+            <td th:text="${p.edad}">0</td>
+        </tr>
+    </tbody>
+</table>
