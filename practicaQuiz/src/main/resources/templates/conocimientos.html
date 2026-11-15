@@ -1,8 +1,5 @@
 <form th:action="@{/resumen}" th:object="${alumno}" method="post">
 	
-	<input type="hidden" th:field="*{nombre}">
-	<input type="hidden" th:field="*{curso}">
-	<input type="hidden" th:field="*{anio}">
 	<label for="conocimiento">Conocimientos:</label>
 	<input type="checkbox" th:field="*{conocimientos}" value="JavaScript">JavaScript
 	<input type="checkbox" th:field="*{conocimientos}" value="React">React
@@ -22,9 +19,7 @@
 </form>
 
 <form th:action="@{/atrasAFormularioTres}" th:object="${alumno}" method="post"> 
-		<input type="hidden" th:field="*{nombre}">
-		<input type="hidden" th:field="*{curso}">
-		<input type="hidden" th:field="*{anio}">
+
 		<button type="submit">Atrás</button>
 	
 </form>
