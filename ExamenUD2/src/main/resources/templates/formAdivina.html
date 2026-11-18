@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head> 
+    <title>Juego de la adivinación</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<!-- Texto a mostrar solo si ha ganado -->
+		<h1 th:text="|Enhorabuena, lo has acertado|"/>
+		
+		<a href="/">Volver a empezar</a>
+	<!-- Texto a mostrar solo si ha perdido -->
+		<h1>Lo sentimos, no lo has acertado en los intentos disponibles.</h1>
+		<a href="/">Volver a empezar</a>
+	
+	<!-- formulario a mostrar durante el juego -->
+		<h2 th:text="|Adivina mi número entre 1 y ${tope}|"/>
+		<p th:text="${mensaje}"/>
+		 <form th:action="@{/}">
+			<label for="numero">Número:</label>
+    		<input type="number" name="numero" />
+        	<br /><br />
+        	<input type="submit" name="jugar" value="Jugar" />
+    </form>
+	
+</body>
+</html>

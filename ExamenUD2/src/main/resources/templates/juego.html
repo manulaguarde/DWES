@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head> 
+    <title>Juego de la adivinación</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body th:object="${jugador}">
+	<h2 th:text="|Adivina mi número entre 1 y *{TOPE}|"/>
+	<p th:text="|La cantidad máxima de intentos es ${maxIntentos}|"></p>
+	<p th:text="|Este es tu intento número *{intentos}|"></p>
+		 <form th:action="@{/jugar}" method="post">
+			<label for="numero">Número:</label>
+			<input type="number" name="numero" th:field="*{numeroElegido}"/>
+			<p style="color: red;" th:if="${#fields.hasErrors('numeroElegido')}" th:errors="*{numeroElegido}"></p>
+			<p th:text="${mensaje}"></p>
+	    	<br /><br />
+	    	<input type="submit" name="jugar" value="Jugar" />
+			
+	</form>
+</body>

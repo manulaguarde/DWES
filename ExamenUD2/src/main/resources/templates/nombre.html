@@ -1,0 +1,7 @@
+
+<form th:action="@{/juego}" th:object="${jugador}" method="post">
+	<label for="nombre">Ingresa tu nombre: <input name="nombre" type="text" th:field="*{nombre}"></label>
+	<p style="color: red;" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></p>
+	
+	<button type="submit">Enviar</button>
+</form>

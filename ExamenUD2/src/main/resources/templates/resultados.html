@@ -1,0 +1,16 @@
+
+
+<ol>
+	<li th:each="resultado : ${resultados.ejemploFakeListaJugadores}" th:text="|Jugador ${resultado.nombre} Intentos ${resultado.intentos}|"></li>
+</ol>
+
+<table border="solid 1px">
+	<tr>
+		<th>Jugador</th>
+		<th>Intentos</th>
+	</tr>
+	<tr th:each="resultado : ${resultados.ejemploFakeListaJugadores}">
+		<td th:text="${resultado.nombre}"></td>
+		<td th:text="${resultado.intentos}"></td>
+	</tr>
+</table>
