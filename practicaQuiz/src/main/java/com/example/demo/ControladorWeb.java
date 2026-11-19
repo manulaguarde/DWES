@@ -30,9 +30,15 @@ public class ControladorWeb {
 	public String muestraSegundoFormulario(@Valid Alumno datosFormulario, BindingResult errores, HttpServletResponse response,
 			Model modelo) {
 
+		
+		
 		if (errores.hasFieldErrors("nombre")) {
+			
 			return "formularioUno";
 		}
+		
+		
+		
 
 		//codificamos el nombre por si tiene espacios o tildes
 		String nombreCodificado = URLEncoder.encode(datosFormulario.getNombre(), StandardCharsets.UTF_8);
@@ -46,7 +52,10 @@ public class ControladorWeb {
 		//la añadimos a la respuesta HTTP
 		response.addCookie(cookieNombre);
 
+		
+		modelo.addAttribute("primeraVez",true);
 		//pasamos el alumno al modelo para formularioDos.html
+		
 		modelo.addAttribute("alumno", datosFormulario);
 		return "formularioDos";
 	}
@@ -58,7 +67,9 @@ public class ControladorWeb {
 
 		if (errores.hasFieldErrors("curso")) {
 			
+			modelo.addAttribute("primeraVez",false);
 			//si hay un error enviamos la cookie decodificada para que pueda ser visualizada en la plantilla anterior
+			
 			datosFormulario.setNombre(URLDecoder.decode(nombreCookie, StandardCharsets.UTF_8));
 			modelo.addAttribute("alumno", datosFormulario);
 			return "formularioDos";
@@ -70,9 +81,12 @@ public class ControladorWeb {
 		cookieCurso.setPath("/");		
 		response.addCookie(cookieCurso);
 
+		
 		//reconstruimos el objeto Alumno completo para la siguiente vista
 		datosFormulario.setNombre(URLDecoder.decode(nombreCookie, StandardCharsets.UTF_8));
 		modelo.addAttribute("alumno", datosFormulario);
+		
+		modelo.addAttribute("primeraVez",true);
 		return "formularioTres";
 	}
 
@@ -86,6 +100,7 @@ public class ControladorWeb {
 			Model modelo) {
 
 		if (errores.hasFieldErrors("anio")) {
+			modelo.addAttribute("primeraVez",false);
 			datosFormulario.setNombre(URLDecoder.decode(nombreCookie, StandardCharsets.UTF_8));
 			datosFormulario.setCurso(URLDecoder.decode(cursoCookie, StandardCharsets.UTF_8));
 			modelo.addAttribute("alumno", datosFormulario);
@@ -97,9 +112,12 @@ public class ControladorWeb {
 		cookieAnio.setPath("/");
 		response.addCookie(cookieAnio);
 
+		
 		datosFormulario.setNombre(URLDecoder.decode(nombreCookie, StandardCharsets.UTF_8));
 		datosFormulario.setCurso(URLDecoder.decode(cursoCookie, StandardCharsets.UTF_8));
 		modelo.addAttribute("alumno", datosFormulario);
+		
+		modelo.addAttribute("primeraVez",true);
 		return "conocimientos";
 	}
 
