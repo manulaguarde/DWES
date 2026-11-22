@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${paginaActual}">Página</title>
+</head>
+<body>
+    <!-- Saludo dinámico con el usuario de la sesión -->
+    <h2 th:text="|Bienvenido ${usuario}|">Bienvenido usuario</h2>
+
+    <!-- Indica en qué página está actualmente -->
+    <p>Estás en la página: <strong th:text="${paginaActual}">Inicio</strong></p>
+
+    <hr>
+
+    <!-- Enlaces a las distintas páginas -->
+    <nav>
+        <a th:href="@{/}">Inicio</a> |
+        <a th:href="@{/pagina1}">Página 1</a> |
+        <a th:href="@{/pagina2}">Página 2</a>
+    </nav>
+	
+	<br>
+	<a th:href="@{/logout}">Cerrar sesión</a>
+</body>
+</html>
